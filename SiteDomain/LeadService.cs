@@ -1,10 +1,11 @@
-﻿using AutoMapper;
+﻿
 using Microsoft.EntityFrameworkCore;
 using SiteDAL;
 using SiteDAL.Entities;
 using SiteDAL.Repositories;
 using System;
 using System.Threading.Tasks;
+using AutoMapper;
 
 
 namespace SiteDomain

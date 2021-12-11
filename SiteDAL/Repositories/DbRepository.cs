@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SiteDAL.Repositories
 {
-   public class DbRepository
+   public class DbRepository : IDbRepository
     {
         private readonly DataContext _context;
 

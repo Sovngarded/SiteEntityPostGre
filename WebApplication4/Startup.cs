@@ -21,7 +21,9 @@ namespace WebApplication4
 {
     public class Startup
     {
+        
         private readonly IConfiguration _configuration;
+
         public Startup(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -32,6 +34,7 @@ namespace WebApplication4
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.AddCors(c =>
             {
                 c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
@@ -46,7 +49,7 @@ namespace WebApplication4
                             assembly.MigrationsAssembly("SiteDal.Migrations"));
             });
 
-            services.AddAutoMapper(typeof(Startup));
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddScoped<IDbRepository, DbRepository>();
             services.AddTransient<ILeadService, LeadService>();
